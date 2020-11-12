@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: my_body_pbr
+  m_Shader: {fileID: 4800000, guid: 9b0580aff26648147b00c2f980230448, type: 3}
+  m_ShaderKeywords: ENABLE_DIFFUSE_ON ENABLE_GI_ON ENABLE_PBR_SPECULAR_ON ENABLE_RIMLIGHT_ON
+    ENABLE_SPECULAR_ON ENABLE_TOON_SPECULAR_ON _LIGHTING_TYPE_DEFAULT
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _albedo_tex:
+        m_Texture: {fileID: 2800000, guid: d9c57413062babd4bb3d426257c6a571, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _clearcoat_normal_tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _hair_jitter:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _hair_tangent:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _mix_tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _normal_tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _preinteger_tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _sss_tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ue_hair_tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - ENABLE_DIFFUSE: 1
+    - ENABLE_GI: 1
+    - ENABLE_PBR_SPECULAR: 1
+    - ENABLE_RIMLIGHT: 1
+    - ENABLE_SPECULAR: 1
+    - ENABLE_TOON_SPECULAR: 1
+    - MOVE: 0
+    - USE_TANGENT: 0
+    - _LIGHTING_TYPE: 0
+    - _OutlineWidth: 0.577
+    - _RimMax: 0.91
+    - _RimMin: 0.664
+    - _RimSmooth: 0.826
+    - _ShadowRange: 0.32
+    - _ShadowSmooth: 0.117
+    - _SpecularGloss: 0.33
+    - _SpecularRange: 0.203
+    - _anisotropy: 0
+    - _anisotropy_intensity: 1
+    - _clearcoat_intensity: 0
+    - _clearcoat_roughness: 0
+    - _gi_intensity: 0.51
+    - _hair_clip_alpha: 0.5
+    - _hair_depth_unit: 1
+    - _jitter_scale: 0
+    - _metallic: 0.004
+    - _move_distance: 0.01
+    - _pbr_intensity: 0.98
+    - _pbr_specular_intensity: 0.27
+    - _roughness: 0.202
+    - _sss_power: 5
+    - _sss_strength: 0
+    - _tex_ctrl_specular_intensity: 0.375
+    - _tex_ctrl_specular_mask: 0.791
+    - _tex_ctrl_threshold: 0.353
+    - _toon_diffuse_intensity: 1
+    - _toon_intensity: 1
+    - _toon_specular_intensity: 0.18
+    m_Colors:
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OutLineColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _RimColor: {r: 0.32226774, g: 0.5550701, b: 0.9622642, a: 1}
+    - _ShadowColor: {r: 0.7, g: 0.7, b: 0.8, a: 1}
+    - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
+    - _clearcoat_f0: {r: 0, g: 0, b: 0, a: 0}
+    - _emissive: {r: 0, g: 0, b: 0, a: 0}
+    - _hair_specular_color: {r: 1, g: 1, b: 1, a: 1}
+    - _metallic_range: {r: 0.1, g: 0.2, b: 0, a: 0}
+    - _root_color: {r: 0, g: 0, b: 0, a: 1}
+    - _roughness_range: {r: 0.3, g: 0.5, b: 0, a: 0}
+    - _sss_color: {r: 0, g: 0, b: 0, a: 1}
+    - _tip_color: {r: 0, g: 0, b: 0, a: 1}
