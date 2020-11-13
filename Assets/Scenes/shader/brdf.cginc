@@ -125,7 +125,7 @@ LightingResult skin_lighting(LightingVars data)
 	float3 brdf = tex2D(_preinteger_tex, preinteger_uv).rgb;
 
 	result.lighting_diffuse = (data.light_color*lerp(NoL, brdf, data.thickness)) * Diffuse_Lambert(data.diffuse_color)*PI;
-	result.lighting_specular = (data.light_color*NoL) * SpecularGGX(data)*PI;
+    result.lighting_specular = (data.light_color * NoL) * SpecularGGX(data) * PI;
 
 	//加上反向的透射部分，其实 前面nol允许负数取值，就说明了暗部不是一个纯黑，而是一个有微弱红色色彩偏向的值
 	//float trans_dot = pow(saturate(dot(data.V, -data.L)), _sss_power)*_sss_strength*data.thickness;
@@ -185,7 +185,6 @@ float3 SpecularAnisotropic(LightingVars data)
 	float3 F = F_Schlick(data.f0, VoH);
 
 	return (D * Vis) * F * _anisotropy_intensity;
-	
 }
 
 LightingResult hair_lighting(LightingVars data)
@@ -204,6 +203,8 @@ LightingResult hair_lighting(LightingVars data)
 
 	result.lighting_specular = (data.light_color*NoL) * SpecularAnisotropic(data)*PI;
 	result.lighting_scatter = float3(0, 0, 0);
+    
+    //result.lighting_specular = float3(1.0, 0.0, 0.0);
 	return result;
 }
 //////////////////////////////////////////////////////////////////////////////

@@ -84,16 +84,16 @@ Material:
     - _metallic: 0.004
     - _move_distance: 0.01
     - _pbr_intensity: 0.98
-    - _pbr_specular_intensity: 0.27
+    - _pbr_specular_intensity: 0.58
     - _roughness: 0.202
     - _sss_power: 5
     - _sss_strength: 0
     - _tex_ctrl_specular_intensity: 0.375
     - _tex_ctrl_specular_mask: 0.791
     - _tex_ctrl_threshold: 0.353
-    - _toon_diffuse_intensity: 1
+    - _toon_diffuse_intensity: 0.73
     - _toon_intensity: 1
-    - _toon_specular_intensity: 0.18
+    - _toon_specular_intensity: 0.11
     m_Colors:
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _OutLineColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

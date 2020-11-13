@@ -1,4 +1,4 @@
-﻿Shader "my_shader/my_shader_tempalte"
+﻿Shader "my_shader/toon_pbr_mix"
 {
 	Properties
 	{
@@ -25,7 +25,7 @@
 		_mix_tex("mix texture (R metallic, G roughness)", 2D) = "black" {}
 		_SpecularColor("Specular Color", Color) = (1,1,1)
 		_SpecularRange("Specular Range",  Range(0, 1)) = 0.9
-		_SpecularGloss("Sprecular Gloss", Range(0.001, 10)) = 0.2
+		_SpecularGloss("Sprecular Gloss", Range(0, 10)) = 0.2
 
 		
 		[HDR]_emissive("Emissive", Color) = (0.0, 0.0, 0.0, 0.0)
@@ -239,7 +239,8 @@
 				half threshold = saturate((halfLambert + _tex_ctrl_threshold)*0.5 - _ShadowRange);
 				half ramp = smoothstep(0, _ShadowSmooth, threshold);
 				half3 diffuse = lerp(_ShadowColor, _MainColor, ramp);
-				return diffuse * data.albedo * data.light_color;
+				//return diffuse * data.albedo * data.light_color;
+				return diffuse * data.diffuse_color * data.light_color;
 			}
 
 			//fixed4 frag (v2f i, out float depth:SV_Depth) : SV_Target
@@ -269,7 +270,7 @@
 				{
 					specular = _toon_specular_intensity * _tex_ctrl_specular_intensity * _SpecularColor;
 				}
-				final_color += _LightColor0 * specular;			
+				final_color += _LightColor0 * specular * data.albedo;
 #endif
 
 #ifdef ENABLE_PBR_SPECULAR_ON
