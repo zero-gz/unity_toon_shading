@@ -33,13 +33,13 @@ Material:
     - _RimMax: 0.862
     - _RimMin: 0.456
     - _RimSmooth: 1
-    - _ShadowRange: 0.343
-    - _ShadowSmooth: 0.294
+    - _ShadowRange: 0.583
+    - _ShadowSmooth: 0.059
     - _SpecularGloss: 0.41
     - _SpecularMulti: 0.106
     - _SpecularRange: 0.335
     - _move_distance: 0.01
-    - _tex_ctrl_specular_intensity: 0.558
+    - _tex_ctrl_specular_intensity: 0.349
     - _tex_ctrl_specular_mask: 1
     - _tex_ctrl_threshold: 0.505
     m_Colors:

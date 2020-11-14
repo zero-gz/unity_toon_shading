@@ -107,8 +107,8 @@ Material:
     - _RimMax: 0.888
     - _RimMin: 0.429
     - _RimSmooth: 0.848
-    - _ShadowRange: 0.598
-    - _ShadowSmooth: 0.142
+    - _ShadowRange: 0.612
+    - _ShadowSmooth: 0.119
     - _SmoothnessTextureChannel: 0
     - _SpecularGloss: 0.68
     - _SpecularHighlights: 1
@@ -118,19 +118,19 @@ Material:
     - _ZWrite: 1
     - _anisotropy: 0
     - _anisotropy_intensity: 1
-    - _gi_intensity: 1.67
+    - _gi_intensity: 0.35
     - _jitter_scale: 0
-    - _metallic: 1
+    - _metallic: 0
     - _move_distance: 0.01
-    - _pbr_specular_intensity: 1.34
-    - _roughness: 0.085
+    - _pbr_specular_intensity: 1.29
+    - _roughness: 0.34
     - _sss_power: 5
     - _sss_strength: 0
     - _tex_ctrl_specular_intensity: 0.804
     - _tex_ctrl_specular_mask: 1
     - _tex_ctrl_threshold: 0.531
-    - _toon_diffuse_intensity: 0.7
-    - _toon_specular_intensity: 0.38
+    - _toon_diffuse_intensity: 1.02
+    - _toon_specular_intensity: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

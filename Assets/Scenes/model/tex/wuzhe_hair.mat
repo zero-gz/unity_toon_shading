@@ -118,19 +118,19 @@ Material:
     - _ZWrite: 1
     - _anisotropy: 0.905
     - _anisotropy_intensity: 4.38
-    - _gi_intensity: 0.69
+    - _gi_intensity: 0.96
     - _jitter_scale: 0
-    - _metallic: 0.022
+    - _metallic: 0.049
     - _move_distance: 0.01
-    - _pbr_specular_intensity: 0.65
-    - _roughness: 0.603
+    - _pbr_specular_intensity: 1.1
+    - _roughness: 0.567
     - _sss_power: 5
     - _sss_strength: 0
     - _tex_ctrl_specular_intensity: 1
     - _tex_ctrl_specular_mask: 1
-    - _tex_ctrl_threshold: 0.5
-    - _toon_diffuse_intensity: 0.18
-    - _toon_specular_intensity: 0.13
+    - _tex_ctrl_threshold: 0.595
+    - _toon_diffuse_intensity: 0.65
+    - _toon_specular_intensity: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

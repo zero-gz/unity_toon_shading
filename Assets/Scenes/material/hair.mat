@@ -75,8 +75,8 @@ Material:
     - _RimMax: 1
     - _RimMin: 0
     - _RimSmooth: 1
-    - _ShadowRange: 0.303
-    - _ShadowSmooth: 0.2
+    - _ShadowRange: 0.584
+    - _ShadowSmooth: 0.186
     - _SmoothnessTextureChannel: 0
     - _SpecularGloss: 0.22
     - _SpecularHighlights: 1
@@ -88,7 +88,7 @@ Material:
     - _move_distance: 0.01
     - _tex_ctrl_specular_intensity: 1
     - _tex_ctrl_specular_mask: 1
-    - _tex_ctrl_threshold: 0.876
+    - _tex_ctrl_threshold: 0.776
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

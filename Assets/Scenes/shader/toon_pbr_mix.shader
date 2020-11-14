@@ -239,7 +239,6 @@
 				half threshold = saturate((halfLambert + _tex_ctrl_threshold)*0.5 - _ShadowRange);
 				half ramp = smoothstep(0, _ShadowSmooth, threshold);
 				half3 diffuse = lerp(_ShadowColor, _MainColor, ramp);
-				//return diffuse * data.albedo * data.light_color;
 				return diffuse * data.diffuse_color * data.light_color;
 			}
 

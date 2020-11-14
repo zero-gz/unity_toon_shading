@@ -28,7 +28,7 @@ Material:
     - ENABLE_SPECULAR: 1
     - MOVE: 0
     - USE_TANGENT: 0
-    - _OutlineWidth: 0.099
+    - _OutlineWidth: 0.216
     - _RimMax: 0.92
     - _RimMin: 0.29
     - _RimSmooth: 1
@@ -37,7 +37,7 @@ Material:
     - _SpecularGloss: 3.03
     - _SpecularMulti: 0.088
     - _SpecularRange: 0.016
-    - _move_distance: 0.262
+    - _move_distance: 0.291
     - _tex_ctrl_specular_intensity: 1
     - _tex_ctrl_specular_mask: 1
     - _tex_ctrl_threshold: 0
