@@ -116,17 +116,19 @@ LightingResult skin_lighting(LightingVars data)
 {
 	LightingResult result;
 
-	float curvature = saturate( length(fwidth(data.N)) / length(fwidth(data.world_pos)));
+	//卡通向皮肤考虑不需要曲率，直接拿最上面一级的pre-integer贴图即可
+	float curvature = 1.0; // saturate(length(fwidth(data.N)) / length(fwidth(data.world_pos)));
 
 	float NoL = max(dot(data.N, data.L), 0.0);
 	float2 preinteger_uv;
 	preinteger_uv.x = dot(data.N, data.L)*0.5 + 0.5;
-	preinteger_uv.y = saturate( curvature * dot(data.light_color, float3(0.22, 0.707, 0.071)) );
+	preinteger_uv.y = 0.8;// saturate(curvature * dot(data.light_color, float3(0.22, 0.707, 0.071)));
 	float3 brdf = tex2D(_preinteger_tex, preinteger_uv).rgb;
 
 	result.lighting_diffuse = (data.light_color*lerp(NoL, brdf, data.thickness)) * Diffuse_Lambert(data.diffuse_color)*PI;
     result.lighting_specular = (data.light_color * NoL) * SpecularGGX(data) * PI;
 
+	//卡通向皮肤不要透射
 	//加上反向的透射部分，其实 前面nol允许负数取值，就说明了暗部不是一个纯黑，而是一个有微弱红色色彩偏向的值
 	//float trans_dot = pow(saturate(dot(data.V, -data.L)), _sss_power)*_sss_strength*data.thickness;
 	result.lighting_scatter = float3(0,0,0); // trans_dot * data.sss_color;
@@ -194,17 +196,18 @@ LightingResult hair_lighting(LightingVars data)
 	float NoL = max(dot(data.N, data.L), 0.0);
 	result.lighting_diffuse = (data.light_color*NoL) * Diffuse_Lambert(data.diffuse_color)*PI;
 
-	// T需要进行jitter
+	// T需要进行jitter,看贴图是横向还是纵向，横向用T，纵向用B
 	float jitter = tex2D(_hair_jitter, data.base_vars.uv0).r;
-	data.T = data.T + data.N*jitter*_jitter_scale;
+	//data.T = data.T + data.N*jitter*_jitter_scale;
+	data.B = data.B + data.N*jitter*_jitter_scale;
 
+	// 这里是flowmap的处理，直接把Ｔ给替换掉
 	//float3 new_T = tex2D(_hair_tangent, data.base_vars.uv0).rgb*2.0f - float3(1.0f, 1.0f, 1.0f);
 	//data.T = data.T*new_T.x + data.B*new_T.y + data.N*new_T.z;
 
 	result.lighting_specular = (data.light_color*NoL) * SpecularAnisotropic(data)*PI;
 	result.lighting_scatter = float3(0, 0, 0);
     
-    //result.lighting_specular = float3(1.0, 0.0, 0.0);
 	return result;
 }
 //////////////////////////////////////////////////////////////////////////////

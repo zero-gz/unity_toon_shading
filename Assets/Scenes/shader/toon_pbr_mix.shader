@@ -2,71 +2,59 @@
 {
 	Properties
 	{
+		[KeywordEnum(DEFAULT, SUBSURFACE, SKIN, HAIR)] _LIGHTING_TYPE("shading model", Float) = 0
+
+		[Space(10)]
+		[Toggle]ENABLE_DIFFUSE("ENABLE_DIFFUSE", Float) = 1
+		[Toggle]ENABLE_PBR_SPECULAR("ENABLE_PBR_SPECULAR", Float) = 1
+		[Toggle]ENABLE_GI("ENABLE_GI", Float) = 1
 		_toon_diffuse_intensity("toon diffuse intensity", Range(0, 5)) = 1.0
-		_toon_specular_intensity("toon specular intensity", Range(0, 5)) = 1.0
 		_pbr_specular_intensity("pbr specular intensity", Range(0, 5)) = 1.0
 		_gi_intensity("gi intensity", Range(0, 5)) = 1.0
 
-		[Space(20)]
+		[Space(30)]
 		_albedo_tex ("albedo texture", 2D) = "white" {}
-
 		_MainColor("Main Color", Color) = (1,1,1)
 		_ShadowColor("Shadow Color", Color) = (0.7, 0.7, 0.8)
 		_ShadowRange("Shadow Range", Range(0, 1)) = 0.5
 		_ShadowSmooth("Shadow Smooth", Range(0, 1)) = 0.2
-		_tex_ctrl_specular_intensity("ilm texture r channel", Range(0, 1)) = 1
 		_tex_ctrl_threshold("ilm texture g channel", Range(0, 1)) = 0.5
-		_tex_ctrl_specular_mask("ilm texture b channel", Range(0, 1)) = 1
 
-		[Space(20)]
+		[Space(30)]
 		_normal_tex("normal texture", 2D) = "bump"{}
 		_metallic("metallic", Range(0, 1)) = 0
 		_roughness("roughness", Range(0, 1)) = 0
 		_mix_tex("mix texture (R metallic, G roughness)", 2D) = "black" {}
-		_SpecularColor("Specular Color", Color) = (1,1,1)
-		_SpecularRange("Specular Range",  Range(0, 1)) = 0.9
-		_SpecularGloss("Sprecular Gloss", Range(0, 10)) = 0.2
 
-		
+		[Space(20)]
 		[HDR]_emissive("Emissive", Color) = (0.0, 0.0, 0.0, 0.0)
-		[KeywordEnum(DEFAULT, SUBSURFACE, SKIN, HAIR)] _LIGHTING_TYPE("shading model", Float) = 0
 
-		[Space(20)]
-		[Toggle]ENABLE_DIFFUSE("ENABLE_DIFFUSE", Float) = 1
-		[Toggle]ENABLE_PBR_SPECULAR("ENABLE_PBR_SPECULAR", Float) = 1
-		[Toggle]ENABLE_TOON_SPECULAR("ENABLE_TOON_SPECULAR", Float) = 1
-		[Toggle]ENABLE_GI("ENABLE_GI", Float) = 1
-
-		[Space(10)]
-		[KeywordEnum(NORMAL, VERTEX)] MOVE("seconad pass move mode", Float) = 0
-		[Toggle]USE_TANGENT("USE_TANGENT", Float) = 0
-		_OutlineWidth("Outline Width", Range(0.01, 2)) = 0.24
-		_OutLineColor("OutLine Color", Color) = (0.5,0.5,0.5,1)
-		_move_distance("Move distance", Range(0, 0.3)) = 0.01
-
-		[Space(20)]
-			//在开启 SUBSURFACE的情况下,_sss_color作为次表面散射的色彩
-			_sss_color("SSS color", Color) = (0.0, 0.0, 0.0, 1.0)
-			_sss_strength("sss strength", Range(0,100)) = 0.0
-			_sss_power("sss power", Range(0, 100)) = 5.0
-
-		[Space(10)]
+		[Space(30)]
 		[Toggle]ENABLE_RIMLIGHT("ENABLE_RIMLIGHT", Float) = 0
 		_RimColor("Rim Color", Color) = (0,0,0,1)
 		_RimMin("Rim min", Range(0,1)) = 0
 		_RimMax("Rim max", Range(0, 1)) = 1
 		_RimSmooth("Rim smooth", Range(0, 1)) = 1
 
-			//skin相关
-			_preinteger_tex("preinteger tex", 2D) = "white" {}
-			_sss_tex("sss tex", 2D) = "white" {}
+		[Space(30)]
+		[KeywordEnum(NORMAL, VERTEX)] MOVE("seconad pass move mode", Float) = 0
+		[Toggle]USE_TANGENT("USE_TANGENT", Float) = 0
+		_OutlineWidth("Outline Width", Range(0.01, 2)) = 0.24
+		_OutLineColor("OutLine Color", Color) = (0.5,0.5,0.5,1)
+		_move_distance("Move distance", Range(0, 0.3)) = 0.01
 
-			//hair相关
-			_anisotropy("anisortopy", Range(-1.0, 1.0)) = 0.0
-			_anisotropy_intensity("_anisotropy_intensity", Range(0.1, 10.0)) = 1.0
-			_hair_jitter("hair jitter", 2D) = "black" {}
-			_jitter_scale("jitter scale", Range(0, 10)) = 0.0
-			_hair_tangent("hair tangent", 2D) = "white" {}
+		[Space(30)]
+		//hair相关
+		_anisotropy("anisortopy", Range(-1.0, 1.0)) = 0.0
+		_anisotropy_intensity("_anisotropy_intensity", Range(0.1, 10.0)) = 1.0
+		_hair_jitter("hair jitter", 2D) = "black" {}
+		_jitter_scale("jitter scale", Range(0, 10)) = 0.0
+		//_hair_tangent("hair tangent", 2D) = "white" {}
+
+		[Space(30)]
+		//skin相关
+		_preinteger_tex("preinteger tex", 2D) = "white" {}
+		_sss_tex("sss tex", 2D) = "white" {}
 	}
 	SubShader
 	{
@@ -103,32 +91,21 @@
 			half3 _ShadowColor;
 			half _ShadowRange;
 			float _ShadowSmooth;
-			float _tex_ctrl_specular_intensity;
 			float _tex_ctrl_threshold;
-			float _tex_ctrl_specular_mask;
 
 			float _toon_diffuse_intensity;
-			float _toon_specular_intensity;
 			float _pbr_specular_intensity;
-
 			float _gi_intensity;
 
 			float4 _RimColor;
 			float _RimMin;
 			float _RimMax;
 			float _RimSmooth;
-
-			half3 _SpecularColor;
-			half _SpecularRange;
-			half _SpecularGloss;
-
 			
 			#pragma shader_feature ENABLE_DIFFUSE_ON
 			#pragma shader_feature ENABLE_PBR_SPECULAR_ON
-			#pragma shader_feature ENABLE_TOON_SPECULAR_ON
 			#pragma shader_feature ENABLE_GI_ON
-			#pragma shader_feature ENABLE_RIMLIGHT_ON
-			
+			#pragma shader_feature ENABLE_RIMLIGHT_ON			
 			
 			#include "UnityCG.cginc"
 			#include "Lighting.cginc"
@@ -261,19 +238,12 @@
 				final_color += toon_color* _toon_diffuse_intensity + mtl.emissive + dir_result.lighting_scatter;
 #endif
 
-#ifdef ENABLE_TOON_SPECULAR_ON
-				half3 specular = 0;
-				half NdotH = max(0, dot(data.N, data.H));
-				half SpecularSize = pow(NdotH, _SpecularGloss);
-				if (SpecularSize >= 1 - _tex_ctrl_specular_mask * _SpecularRange)
-				{
-					specular = _toon_specular_intensity * _tex_ctrl_specular_intensity * _SpecularColor;
-				}
-				final_color += _LightColor0 * specular * data.albedo;
-#endif
-
 #ifdef ENABLE_PBR_SPECULAR_ON
+			#ifdef _LIGHTING_TYPE_SKIN
+				final_color += dir_result.lighting_diffuse*_pbr_specular_intensity;
+			#else
 				final_color += dir_result.lighting_specular*_pbr_specular_intensity;
+			#endif
 #endif
 
 #ifdef ENABLE_GI_ON

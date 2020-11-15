@@ -60,7 +60,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _hair_jitter:
-        m_Texture: {fileID: 2800000, guid: fe2e61fa5d31f8445981c640a2d8104f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 11cd9e431727aa64781e97fd19d0caa1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _hair_tangent:
@@ -116,10 +116,10 @@ Material:
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
-    - _anisotropy: 0.905
-    - _anisotropy_intensity: 4.38
+    - _anisotropy: 0.95
+    - _anisotropy_intensity: 2.97
     - _gi_intensity: 0.96
-    - _jitter_scale: 0
+    - _jitter_scale: 1.01
     - _metallic: 0.049
     - _move_distance: 0.01
     - _pbr_specular_intensity: 1.1

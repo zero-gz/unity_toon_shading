@@ -9,7 +9,7 @@ Material:
   m_Name: wuzhe_face
   m_Shader: {fileID: 4800000, guid: 9b0580aff26648147b00c2f980230448, type: 3}
   m_ShaderKeywords: ENABLE_DIFFUSE_ON ENABLE_GI_ON ENABLE_PBR_SPECULAR_ON ENABLE_TOON_SPECULAR_ON
-    MOVE_NORMAL _LIGHTING_TYPE_DEFAULT
+    MOVE_NORMAL _LIGHTING_TYPE_SKIN
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -76,7 +76,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _preinteger_tex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: a9ce9487849fb424e9eb1580819b2a1f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _sss_tex:
@@ -98,7 +98,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _LIGHTING_TYPE: 0
+    - _LIGHTING_TYPE: 2
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -122,14 +122,14 @@ Material:
     - _jitter_scale: 0
     - _metallic: 0
     - _move_distance: 0.01
-    - _pbr_specular_intensity: 0
-    - _roughness: 0
+    - _pbr_specular_intensity: 0.41
+    - _roughness: 0.429
     - _sss_power: 5
     - _sss_strength: 0
     - _tex_ctrl_specular_intensity: 1
     - _tex_ctrl_specular_mask: 1
     - _tex_ctrl_threshold: 0.5
-    - _toon_diffuse_intensity: 0.87
+    - _toon_diffuse_intensity: 0.78
     - _toon_specular_intensity: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
