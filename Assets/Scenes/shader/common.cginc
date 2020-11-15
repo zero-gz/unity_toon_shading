@@ -42,6 +42,7 @@ sampler2D _normal_tex;
 sampler2D _mix_tex;
 sampler2D _preinteger_tex;
 sampler2D _sss_tex;
+sampler2D _emissive_tex;
 
 float _roughness;
 float _metallic;

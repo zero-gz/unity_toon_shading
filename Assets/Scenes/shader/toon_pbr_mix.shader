@@ -28,6 +28,7 @@
 
 		[Space(20)]
 		[HDR]_emissive("Emissive", Color) = (0.0, 0.0, 0.0, 0.0)
+		_emissive_tex("Emissive mask texture", 2D) = "white"{}
 
 		[Space(30)]
 		[Toggle]ENABLE_RIMLIGHT("ENABLE_RIMLIGHT", Float) = 0
@@ -158,7 +159,7 @@
 
 				mtl.roughness = _roughness;// tex2D(_mix_tex, i.uv).g; //_roughness;
 				mtl.metallic = _metallic;// tex2D(_mix_tex, i.uv).r; //_metallic;
-				mtl.emissive = _emissive;
+				mtl.emissive = _emissive*(tex2D(_emissive_tex, i.uv).r);
 				mtl.opacity = albedo_color.a;
 				mtl.occlusion = 1.0;
 

@@ -59,6 +59,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 57f46cd5be81bb343a61efdfd4fde53a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _emissive_tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _hair_jitter:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -102,7 +106,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineWidth: 0.24
+    - _OutlineWidth: 0.781
     - _Parallax: 0.02
     - _RimMax: 1
     - _RimMin: 0
